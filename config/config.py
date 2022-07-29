@@ -58,7 +58,7 @@ OWNER_ID = list(
 
 
 
-UPSTREAM_REPO = "https://github.com/Unknown-San/Anya"
+UPSTREAM_REPO = "https://github.com/Unknown-San/Anya.dev"
 UPSTREAM_BRANCH = "main"
 
 
