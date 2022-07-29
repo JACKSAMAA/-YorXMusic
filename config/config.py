@@ -42,7 +42,7 @@ SONG_DOWNLOAD_DURATION = int(
 ) 
 
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001733372611"))
 
 
 MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","SiestaXMusic")
