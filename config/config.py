@@ -16,116 +16,119 @@ from pyrogram import filters
 
 load_dotenv()
 
-
+# Get it from my.telegram.org
 API_ID = int(getenv("API_ID", "4665778"))
-API_HASH = getenv("10e3ed833b0d09699973420d45359409")
+API_HASH = getenv("API_HASH")
 
+## Get it from @Botfather in Telegram.
+BOT_TOKEN = getenv("BOT_TOKEN")
 
-BOT_TOKEN = getenv("5413491390:AAFA6ojnW070AJ4GDqRC1IC8k3_mcjQa9z4")
-
-
-MONGO_DB_URI = getenv("mongodb+srv://ok:lol@cluster1.udhzs7r.mongodb.net/?retryWrites=true&w=majority", None)
+# Database to save your chats and stats... Get MongoDB:-  https://telegra.ph/How-To-get-Mongodb-URI-04-06
+MONGO_DB_URI = getenv("MONGO_DB_URI", None)
 
 if MONGO_DB_URI != None:
     MONGO_DB_URI = MONGO_DB_URI.strip()
 if MONGO_DB_URI == "":
     MONGO_DB_URI = None
 
-
+# Custom max audio(music) duration for voice chat. set DURATION_LIMIT in variables with your own time(mins), Default to 60 mins.
 DURATION_LIMIT_MIN = int(
     getenv("DURATION_LIMIT", "60")
-) 
+)  # Remember to give value in Minutes
 
-
+# Duration Limit for downloading Songs in MP3 or MP4 format from bot
 SONG_DOWNLOAD_DURATION = int(
     getenv("SONG_DOWNLOAD_DURATION_LIMIT", "180")
-) 
+)  # Remember to give value in Minutes
 
+# You'll need a Private Group ID for this.
+LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", ""))
 
-LOG_GROUP_ID = int(getenv("LOG_GROUP_ID", "-1001733372611"))
+# A name for your Music bot.
+MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","AnyaSuperbot")
 
-
-MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","SiestaXMusic")
-
-
+# Your User ID.
 OWNER_ID = list(
-    map(int, getenv("5531584953", "").split())
-)
+    map(int, getenv("OWNER_ID", "5531584953").split())
+)  # Input type must be interger
 
+# Get it from http://dashboard.heroku.com/account
+HEROKU_API_KEY = getenv("HEROKU_API_KEY")
 
+# You have to Enter the app name which you gave to identify your  Music Bot in Heroku.
+HEROKU_APP_NAME = getenv("HEROKU_APP_NAME")
 
-
-
-
-
-UPSTREAM_REPO = "https://github.com/Unknown-San/Anya.dev"
+# For customized or modified Repository
+UPSTREAM_REPO = "https://github.com/TechShreyash/SiestaXMusic"
 UPSTREAM_BRANCH = "main"
 
-
+# GIT TOKEN ( if your edited repo is private)
 GIT_TOKEN = getenv("GIT_TOKEN", None)
 
-
+# Set it in True if you want to leave your assistant after a certain amount of time. [Set time via AUTO_LEAVE_ASSISTANT_TIME]
 AUTO_LEAVING_ASSISTANT = getenv("AUTO_LEAVING_ASSISTANT", "False").capitalize()
 
-
+# Time after which you're assistant account will leave chats automatically.
 AUTO_LEAVE_ASSISTANT_TIME = int(
     getenv("ASSISTANT_LEAVE_TIME", "5400")
-)  
+)  # Remember to give value in Seconds
 
-
+# Time after which bot will suggest random chats about bot commands.
 AUTO_SUGGESTION_TIME = int(
     getenv("AUTO_SUGGESTION_TIME", "5400")
-)  
+)  # Remember to give value in Seconds
 
-
+# Set it True if you want to delete downloads after the music playout ends from your downloads folder
 AUTO_DOWNLOADS_CLEAR = getenv("AUTO_DOWNLOADS_CLEAR", "True")
 
-
+# Set it True if you want to bot to suggest about bot commands to random chats of your bots.
 AUTO_SUGGESTION_MODE = getenv("AUTO_SUGGESTION_MODE", "False").capitalize()
 
+# Set it true if you want your bot to be private only [You'll need to allow CHAT_ID via /authorise command then only your bot will play music in that chat.]
 PRIVATE_BOT_MODE = getenv("PRIVATE_BOT_MODE", None)
 
-
+# Time sleep duration For Youtube Downloader
 YOUTUBE_DOWNLOAD_EDIT_SLEEP = int(getenv("YOUTUBE_EDIT_SLEEP", "3"))
 
-
+# Time sleep duration For Telegram Downloader
 TELEGRAM_DOWNLOAD_EDIT_SLEEP = int(getenv("TELEGRAM_EDIT_SLEEP", "5"))
 
+# Your Github Repo.. Will be shown on /start Command
+GITHUB_REPO = "https://github.com/TechShreyash/SiestaXMusic"
 
-GITHUB_REPO = "https://github.com/Unknown-San/Anya"
-
-
+# Spotify Client.. Get it from https://developer.spotify.com/dashboard
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "817ef3b667ae41fa904568b4eeaee96d")
 SPOTIFY_CLIENT_SECRET = getenv("SPOTIFY_CLIENT_SECRET", "8130539ee3cf4b30bc24d2f694a60838")
 
+# Maximum number of video calls allowed on bot. You can later set it via /set_video_limit on telegram
 VIDEO_STREAM_LIMIT = int(getenv("VIDEO_STREAM_LIMIT", "3"))
 
-
+# Maximum Limit Allowed for users to save playlists on bot's server
 SERVER_PLAYLIST_LIMIT = int(getenv("SERVER_PLAYLIST_LIMIT", "100"))
 
-
+# MaximuM limit for fetching playlist's track from youtube, spotify, apple links.
 PLAYLIST_FETCH_LIMIT = int(getenv("PLAYLIST_FETCH_LIMIT", "50"))
 
-
+# Cleanmode time after which bot will delete its old messages from chats
 CLEANMODE_DELETE_MINS = int(
     getenv("CLEANMODE_MINS", "5")
-)  
+)  # Remember to give value in Seconds
 
 
-
+# Telegram audio  and video file size limit
 
 TG_AUDIO_FILESIZE_LIMIT = int(
     getenv("TG_AUDIO_FILESIZE_LIMIT", "104857600")
-)  
+)  # Remember to give value in bytes
 
 TG_VIDEO_FILESIZE_LIMIT = int(
     getenv("TG_VIDEO_FILESIZE_LIMIT", "1073741824")
-)  
+)  # Remember to give value in bytes
+
+# Chceckout https://www.gbmb.org/mb-to-bytes  for converting mb to bytes
 
 
-
-
-
+# You'll need a Pyrogram String Session for these vars. Generate String from our session generator bot @YukkiStringBot
 STRING1 = getenv("STRING_SESSION", None)
 STRING2 = getenv("STRING_SESSION2", None)
 STRING3 = getenv("STRING_SESSION3", None)
@@ -141,7 +144,7 @@ STRING5 = getenv("STRING_SESSION5", None)
 #     |_|   \____/|_|\_\_|\_\_____| |_|  |_|\____/|_____/|_____\_____| |____/ \____/  |_|
 
 
-
+### DONT TOUCH or EDIT codes after this line
 BANNED_USERS = filters.user()
 YTDOWNLOADER = 1
 LOG = 2
@@ -155,8 +158,8 @@ clean = {}
 autoclean = []
 
 
-
-START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/ccbafe49d3343160a76cb.jpg")
+# Images
+START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/e17f42bc195635b668d6d.jpg")
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
