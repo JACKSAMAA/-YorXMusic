@@ -17,14 +17,14 @@ from pyrogram import filters
 load_dotenv()
 
 
-API_ID = int(getenv("API_ID", ""))
-API_HASH = getenv("API_HASH")
+API_ID = int(getenv("API_ID", "4665778"))
+API_HASH = getenv("10e3ed833b0d09699973420d45359409")
 
 
-BOT_TOKEN = getenv("BOT_TOKEN")
+BOT_TOKEN = getenv("5413491390:AAFA6ojnW070AJ4GDqRC1IC8k3_mcjQa9z4")
 
 
-MONGO_DB_URI = getenv("MONGO_DB_URI", None)
+MONGO_DB_URI = getenv("mongodb+srv://ok:lol@cluster1.udhzs7r.mongodb.net/?retryWrites=true&w=majority", None)
 
 if MONGO_DB_URI != None:
     MONGO_DB_URI = MONGO_DB_URI.strip()
@@ -49,7 +49,7 @@ MUSIC_BOT_NAME = getenv("MUSIC_BOT_NAME","SiestaXMusic")
 
 
 OWNER_ID = list(
-    map(int, getenv("OWNER_ID", "").split())
+    map(int, getenv("5531584953", "").split())
 )
 
 
@@ -58,7 +58,7 @@ OWNER_ID = list(
 
 
 
-UPSTREAM_REPO = "https://github.com/TechShreyash/SiestaXMusic"
+UPSTREAM_REPO = "https://github.com/Unknown-San/Anya"
 UPSTREAM_BRANCH = "main"
 
 
@@ -92,7 +92,7 @@ YOUTUBE_DOWNLOAD_EDIT_SLEEP = int(getenv("YOUTUBE_EDIT_SLEEP", "3"))
 TELEGRAM_DOWNLOAD_EDIT_SLEEP = int(getenv("TELEGRAM_EDIT_SLEEP", "5"))
 
 
-GITHUB_REPO = "https://github.com/TechShreyash/SiestaXMusic"
+GITHUB_REPO = "https://github.com/Unknown-San/Anya"
 
 
 SPOTIFY_CLIENT_ID = getenv("SPOTIFY_CLIENT_ID", "817ef3b667ae41fa904568b4eeaee96d")
@@ -156,7 +156,7 @@ autoclean = []
 
 
 
-START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/e17f42bc195635b668d6d.jpg")
+START_IMG_URL = getenv("START_IMG_URL", "https://telegra.ph/file/ccbafe49d3343160a76cb.jpg")
 
 PING_IMG_URL = getenv(
     "PING_IMG_URL",
